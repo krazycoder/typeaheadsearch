@@ -1,12 +1,26 @@
-Title: Type Ahead Search programming assignment
-Author: Kunal Sahu
+Spacebox
+========
+![Demo](/demo.png "Demo")
+Welcome to Spacebox - space analyzer app for Dropbox!
 
-Overview:
+#### How to run it
+* Pull the git repository
+* Install Dropbox SDK
+* Set DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_APP_REDIRECT in spacebox.py
+* Allow http://127.0.0.1:5000/dropbox-auth-finish in Redirect URIs in your app OAuth2 section
+* $ python spacebox.py
+* Visit http://127.0.0.1:5000
+
+Type Ahead Search
+========
+
+#### Overview
 This Java source code implements a prompt to allow processing of new movie
 entries and allow querying by words present in movie titles.
 
-How to run:
+#### How to run
 Make sure that JRE and JDK are installed on your machine.
+
 $ javac TypeAheadSearch.java \
         TypeAheadSearchException.java \
         Trie.java \
@@ -14,23 +28,24 @@ $ javac TypeAheadSearch.java \
         MovieEntry.java \
         MovieEntryException.java \
         MovieEntryComparator.java
+        
 $ java TypeAheadSearch
 
 This should compile and run the main executable which will provide a prompt.
 The list of allowed commands and arguments are:
 
-- process-file <filename>
+* process-file <filename>
 The filename should be the complete path to the file located on the local
 file-system.
 
-- query <prefix>
+* query <prefix>
 There should be no spaces or regular expressions in the prefix to be matched.
 It should be an exact matching prefix for any word present in the movie titles.
 
-- quit
+* quit
 Use this to exit out of the program.
 
-Design:
+#### Design
 This assignment consists of two main components:
 a) to be able to process the file contents in the background.
 b) to be able to query by movie titles.
@@ -58,7 +73,7 @@ set of HashKeys associated with the matching nodes, and lookup their
 corresponding entry strings from the HashMap. We limit the number of results
 to a certain max size (without any pagination options).
 
-Debugging:
+#### Debugging
 The program maintains a log file in the directory from which it's executed. It
 contains useful information about the current processing state and warnings
 about unexpected encounters in the program.
